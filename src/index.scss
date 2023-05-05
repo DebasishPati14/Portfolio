@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+:root{
+    --cream-theme-background-color : #EEF2E6;
+    --light-green-theme-main-color : #41644A;
+    --green-theme-sub-text-color : #263A29;
+    --yellow-theme-nav-background-color : #D6CDA4;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background: var(--cream-theme-background-color);
+    height: 100%;
+    color: var(--light-green-theme-main-color);
+}
+
+#root{
+    height: 100%;
+}
