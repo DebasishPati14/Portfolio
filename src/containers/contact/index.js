@@ -30,10 +30,10 @@ const Contact = () => {
             <section className="content" id="content">
                 <PageHeader heading="Contact Me" icon={<MdContactMail size={35} />} ></PageHeader>
                 <div className="contact__content">
-                    <Animate play duration={2} start={{ transform: 'translatex(-900px)' }} end={{ transform: 'translateX(00px)' }}>
+                    <Animate play duration={2} start={{ transform: 'translateX(-30%)' }} end={{ transform: 'translateX(00px)' }}>
                         <h3 className="contact__content__header-text">Let's Talk</h3>
                     </Animate>
-                    <Animate play duration={1} start={{ transform: 'translatex(1200px)' }} end={{ transform: 'translateX(00px)' }}>
+                    <Animate play duration={1} start={{ transform: 'translateX(100%)' }} end={{ transform: 'translateX(00px)' }}>
                         <div className="contact__content__form">
                             <form onSubmit={handleSubmit(sentMessage)}>
                                 <div className="contact__content__form__controlswrapper">

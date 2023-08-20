@@ -3,5 +3,13 @@
   
   &__main-page-content{
       height: calc(100% - 80px);
+      
   }
+
+ 
+}
+
+.setIndex{
+  position: relative;
+  z-index: -1;
 }
