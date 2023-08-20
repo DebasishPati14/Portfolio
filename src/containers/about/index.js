@@ -26,13 +26,13 @@ const About = () => {
                         </Animate>
 
                         <Animate play duration={1} start={{ transform: 'translateY(500px)' }} end={{ transform: 'translateX(0px)' }}>
-                            <h3>Personal Details</h3>
+                            <h3 style={{marginTop:"20px"}}>Personal Details</h3>
                             <ul>
                                 {data.map((item, index) => {
                                     return (
-                                        <li key={index}>
+                                        <li  key={index}>
                                             <span className="title">{item.label + " : "} </span>
-                                            <span className="value">{item.value}</span>
+                                            <span className="value">{" " + item.value}</span>
                                         </li>
                                     )
                                 })}

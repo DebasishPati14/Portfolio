@@ -28,11 +28,17 @@ const data = [
     },
 ]
 
-export default function NavBar() {
+export default function NavBar({handleChange}) {
     const [buttonValue, setButtonValue] = useState(false);
+const closeNavBar = ()=>{
+    console.log(buttonValue);
+    setButtonValue(!buttonValue);
+    handleChange()
+}
 
     const handleToggleIcon = () => {
         setButtonValue(!buttonValue);
+        handleChange()
       };
 
     return (
@@ -48,7 +54,7 @@ export default function NavBar() {
                     {data.map((item, index) => {
                         return (
                             <li key={index} className="navbar__container__menu__item">
-                                <Link to={item.to} className="navbar__container__menu__item__links">
+                                <Link onClick={closeNavBar} to={item.to} className="navbar__container__menu__item__links">
                                     {item.label}
                                 </Link>
                             </li>

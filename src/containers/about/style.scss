@@ -32,7 +32,6 @@
   
         ul > li {
           line-height: 1rem;
-          margin-bottom: 15px;
   
           span.title,
           span.value {
@@ -42,8 +41,8 @@
             border-bottom: 2px solid var(--light-green-theme-main-color);
             position: relative;
             display: inline-block;
-            margin-right: 16px;
-            padding-bottom: 5px;
+            margin: 8px 0;
+            padding: 5px 0;
             color: var(--green-theme-sub-text-color);
           }
   

@@ -49,9 +49,21 @@
   
   
   @media only screen and (max-width: 550px) {
+    .home{
+      padding: 8%;
+
+      &__contact-me{
+    
+        button{
+          padding: 8px 20px;
+          font-size: 1.5rem;
+        }
+    }
+  }
+
     .home__text-wrapper h1 {
-      font-size: 3rem;
-      line-height: 5rem;
+      font-size: 2.5rem;
+      line-height: 4rem;
     }
   }
   

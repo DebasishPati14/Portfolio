@@ -17,7 +17,7 @@ const Home = () => {
                 <Animate play duration={2} start={{ transform: 'translateY(500px)' }} end={{ transform: 'translateX(00px)' }}>
                     <div className="home__contact-me">
                         <button onClick={() => { console.log(navigate); navigate('/contact') }}>
-                            Hire Me
+                        {"Send a Message 💌"}
                         </button>
                     </div>
                 </Animate>
