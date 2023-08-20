@@ -67,10 +67,10 @@
         top: 80px;
         left: -110%;
         opacity: 1;
-        transition: all 0.5s ease;
+        transition: all 2s ease;
 
         &.active{
-            background: #181818;
+            background:  var(--yellow-theme-nav-background-color);
             left: 0px;
             opacity: 1;
         }
@@ -83,8 +83,9 @@
     }
 
     .nav-icon{
-        display: block;
         cursor: pointer;
+        display: block;
+        // cursor: pointer;
         color: var(--light-green-theme-main-color);
         padding-right: 20px;
     }

@@ -1,14 +1,14 @@
 const resumeData = {
     experience: [
         {
-            title: "Jr. Software Engineer",
-            subTitle: "In Time Tec",
-            description: "Worked in different projects and contributed efficiently.",
-        },
-        {
             title: "Software Engineer trainee",
             subTitle: "In Time Tec",
             description: "Completed training within expected time in Web development field.",
+        },
+        {
+            title: "Jr. Software Engineer",
+            subTitle: "In Time Tec",
+            description: "Worked in different projects and contributed efficiently.",
         },
         {
             title: "Internship",
