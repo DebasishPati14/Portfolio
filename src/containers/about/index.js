@@ -2,8 +2,7 @@ import React from "react";
 import PageHeader from '../../components/page-header';
 import { RiContactsFill } from 'react-icons/ri'
 import { Animate } from 'react-simple-animate';
-import { DiJava } from 'react-icons/di';
-import { MdLanguage } from 'react-icons/md';
+import { DiJava, DiNodejsSmall } from 'react-icons/di';
 import { HiDatabase } from 'react-icons/hi';
 import { SiAngularjs } from 'react-icons/si'
 import './style.scss'
@@ -26,11 +25,11 @@ const About = () => {
                         </Animate>
 
                         <Animate play duration={1} start={{ transform: 'translateY(500px)' }} end={{ transform: 'translateX(0px)' }}>
-                            <h3 style={{marginTop:"20px"}}>Personal Details</h3>
+                            <h3 style={{ marginTop: "20px" }}>Personal Details</h3>
                             <ul>
                                 {data.map((item, index) => {
                                     return (
-                                        <li  key={index}>
+                                        <li key={index}>
                                             <span className="title">{item.label + " : "} </span>
                                             <span className="value">{" " + item.value}</span>
                                         </li>
@@ -49,11 +48,12 @@ const About = () => {
                                     <DiJava size={55} color="var( --light-green-theme-main-color)" />
                                 </div>
                                 <div>
-                                    <SiAngularjs size={55} color="var( --light-green-theme-main-color)" />
+                                    <DiNodejsSmall size={55} color="var( --light-green-theme-main-color)" />
                                 </div>
                                 <div>
-                                    <MdLanguage size={55} color="var( --light-green-theme-main-color)" />
+                                    <SiAngularjs size={55} color="var( --light-green-theme-main-color)" />
                                 </div>
+
                             </div>
                         </Animate>
                     </div>

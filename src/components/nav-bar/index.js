@@ -23,23 +23,27 @@ const data = [
         to: '/resume'
     },
     {
+        label: "PROJECTS",
+        to: '/projects'
+    },
+    {
         label: "CONTACT",
         to: '/contact'
     },
 ]
 
-export default function NavBar({handleChange}) {
+export default function NavBar({ handleChange }) {
     const [buttonValue, setButtonValue] = useState(false);
-const closeNavBar = ()=>{
-    console.log(buttonValue);
-    setButtonValue(!buttonValue);
-    handleChange()
-}
+    const closeNavBar = () => {
+        console.log(buttonValue);
+        setButtonValue(!buttonValue);
+        handleChange()
+    }
 
     const handleToggleIcon = () => {
         setButtonValue(!buttonValue);
         handleChange()
-      };
+    };
 
     return (
         <>

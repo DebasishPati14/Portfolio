@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Animate } from "react-simple-animate";
 
 const Home = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <>
             <section className="home">
@@ -17,7 +17,7 @@ const Home = () => {
                 <Animate play duration={2} start={{ transform: 'translateY(500px)' }} end={{ transform: 'translateX(00px)' }}>
                     <div className="home__contact-me">
                         <button onClick={() => { console.log(navigate); navigate('/contact') }}>
-                        {"Send a Message 💌"}
+                            {"Drop a Message 💌"}
                         </button>
                     </div>
                 </Animate>

@@ -8,20 +8,22 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
     const navigate = useNavigate();
-    const { register, handleSubmit, formState } = useForm({ mode: "onChange" });
+    const { register, handleSubmit, formState } = useForm({ defaultValues: { email: "", message: "", name: "" } });
     let submitButtonTriggered = false;
+
     const sentMessage = (event) => {
         submitButtonTriggered = true;
-        console.log((!formState.isValid && submitButtonTriggered));
         if (event.name && event.message && event.email) {
-            Swal.fire({
-                title: "Thanks",
-                text: "Message Sent",
-                icon: "success",
-                confirmButtonText: "Home",
-            }).then(navigate('/'));
-        } else {
-
+            fetch(`https://mr-deba-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/messages/${Date.now()}.json`, { method: "PATCH", body: JSON.stringify({ name: event.name, message: event.message, email: event.email, sentAt: new Date().toLocaleString() }) }).then((res) => {
+                console.log(res.json());
+                Swal.fire({
+                    title: "Thanks 😃",
+                    text: "I appreciate your interest and am thrilled to receive your message",
+                    icon: "success",
+                }).then(navigate('/'));
+            }).catch((err) => {
+                console.log(err);
+            })
         }
     }
 
@@ -38,21 +40,34 @@ const Contact = () => {
                             <form onSubmit={handleSubmit(sentMessage)}>
                                 <div className="contact__content__form__controlswrapper">
                                     <div>
-                                        <input className="inputName"
-                                            type="text" {...register("name")} />
+                                        <input className="inputName" name='name'
+                                            type="text" {...register("name", { required: "Name is required!." })} />
                                         <label className="nameLabel" htmlFor="name">Name</label>
+                                        {formState.errors.name && (<p style={{ marginTop: "7px", fontSize: "14px", color: "red" }} >
+                                            {formState.errors.name.message}
+                                        </p>)}
                                     </div>
 
                                     <div>
-                                        <input className="inputEmail"
-                                            type="email" {...register("email")} />
+                                        <input className="inputEmail" name='email'
+                                            type="email" {...register("email", {
+                                                required: "Email is required!", pattern: {
+                                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                    message: "Invalid Email Address!",
+                                                },
+                                            })} />
                                         <label className="emailLabel" htmlFor="email" >Mail</label>
+                                        {formState.errors.email && (<p style={{ marginTop: "7px", fontSize: "14px", color: "red" }} >
+                                            {formState.errors.email.message}
+                                        </p>)}
                                     </div>
 
                                     <div>
-                                        <input className="inputDescription" {...register("message", { required: true, message: 'Please fill this field' })}
+                                        <input className="inputDescription" name='message' {...register("message", { required: 'Message is required' })}
                                             type="text" />
                                         <label className="descriptionLabel" htmlFor="message">Message</label>
+                                        {formState.errors.message && (<p style={{ marginTop: "7px", fontSize: "14px", color: "red" }} >                                           {formState.errors.message.message}
+                                        </p>)}
                                     </div>
                                 </div>
                                 {(!formState.isValid && submitButtonTriggered) && <h1 style={{ color: "red" }}>Please Fill All The Fields</h1>}
@@ -60,8 +75,8 @@ const Contact = () => {
                             </form>
                         </div>
                     </Animate>
-                </div>
-            </section>
+                </div >
+            </section >
         </>
     )
 }
